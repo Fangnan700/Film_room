@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>首页</title>
+    <script src="../js/jquery-3.6.3.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div id="title">
+        <img src="../img/film.png" width="45px" height="45px" style="filter: invert(100%)">
+        电影屋
+    </div>
+
+    <div id="main_frame">
+        <div id="video_frame">
+            <video
+                    id="player"
+                    class="video-js"
+                    controls
+                    data-setup="{}"
+            >
+            </video>
+        </div>
+    </div>
+
+    <div class="row" id="btn_group">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#create_room_Modal">创建房间</button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#join_room_Modal">加入房间</button>
+        <button type="button" class="btn btn-secondary" onclick="sub_synchronize()">同步进度</button>
+        <div class="col" id="room_info"></div>
+    </div>
+
+</div>
+
+<!--    模态弹窗    -->
+
+<!--创建房间-->
+<div class="modal fade" id="create_room_Modal" tabindex="-1" aria-labelledby="create_room_Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">创建房间</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="room_id" placeholder="房间号">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="room_pwd" placeholder="房间密码">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="video_url" placeholder="视频地址(请使用mp4格式)">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="create_room()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--加入房间-->
+<div class="modal fade" id="join_room_Modal" tabindex="-1" aria-labelledby="join_room_Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">加入房间</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="join_room_id" placeholder="房间号">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="join_room_pwd" placeholder="房间密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="join_room()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--使用帮助-->
+<div class="modal fade"  id="help_Modal" tabindex="-1" aria-labelledby="help_Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">使用帮助</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>欢迎使用电影屋.</p>
+                <p>创建房间：输入自定义的房间号和密码。</p>
+                <p>视频链接：目前只支持mp4格式的视频外链，建议将mp4文件上传到对象存储服务（cos）后，把外链填写到此处。</p>
+                <p>加入房间：从好友处获得房间号和密码，填写即可。</p>
+                <p>同步进度：进入房间后，点击“同步进度”按钮后，会自动与房间创建者的播放进度同步，之后视频的播放与暂停则全局同步。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../js/home.js"></script>
+</html>
