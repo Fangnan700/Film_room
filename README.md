@@ -47,11 +47,7 @@
 
 ## 效果图
 
-![image-20221228134402195](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/image-20221228134402195.png)
-
-
-
-
+![Screenshot from 2022-12-28 13-43-51](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/Screenshot from 2022-12-28 13-43-51.png)
 
 
 
