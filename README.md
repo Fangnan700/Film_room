@@ -2,6 +2,10 @@
 
 
 
+<meta name="referrer" content="no-referrer">
+
+
+
 ## 说明
 
 放假回家之后，因为和女朋友不在同一个地方，又想着一起看电影，但市面上能够远程一起看电影的方法都无法满足现有的需求：
@@ -47,11 +51,7 @@
 
 ## 效果图
 
-![Screenshot from 2022-12-28 13-43-51](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/Screenshot from 2022-12-28 13-43-51.png)
-
-
-
-
+![1](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/1.png)
 
 
 
