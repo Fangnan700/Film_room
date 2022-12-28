@@ -14,7 +14,7 @@ let this_cur_time = "";
 
 
 let ws;
-ws = new WebSocket("ws://" + window.location.host + "/synchronize");
+ws = new ReconnectingWebSocket("ws://" + window.location.host + "/synchronize");
 ws.onopen = function () {
 
 }
@@ -38,7 +38,11 @@ ws.onmessage = function (event) {
 }
 
 ws.onclose = function () {
-    ws = new WebSocket("ws://" + window.location.host + "/synchronize");
+
+}
+
+ws.onerror = function () {
+
 }
 
 
@@ -193,7 +197,7 @@ function heart() {
     let jsonString = JSON.stringify(syn_data);
     ws.send(jsonString);
 }
-setInterval(heart, 1000);
+setInterval(heart, 30000);
 
 
 

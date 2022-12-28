@@ -51,7 +51,7 @@
 
 ## 效果图
 
-![1](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/1.png)
+![image-20221228164420769](https://yvling-typora-image-1257337367.cos.ap-nanjing.myqcloud.com/typora/image-20221228164420769.png)
 
 
 
